@@ -9,9 +9,10 @@
 <body>
     {% for book in books %}
         {{book.book_name}}<br>
+        {{book.book_author}}<br>
         {{book.book_release}}<br>
         {{book.book_description}}<br>
-        {{book.vote}}<br>
+        {{book.book_upvote}}<br>
     {% endfor %}
 </body>
 </html>
