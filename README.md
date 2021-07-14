@@ -1,102 +1,382 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Book Review, a review and recommendation site for books.
 
-Welcome manell0,
+![The Markup from responsive design](static/readme-resources/markup.jpg)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
 
-## Gitpod Reminders
+## Milestone project 3 (Code Institute)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This is a simple website where you can upload details of books, and allow users to write comments about any book and upvote it..
 
-`python3 -m http.server`
+**[Check out the website here](https://manell0.github.io/)**
 
-A blue button should appear to click: _Make Public_,
+## Table of contents
 
-Another blue button should appear to click: _Open Browser_.
+1. [Introduction](#introduction)
+2. [UX](#ux)
+   1. [Ideal User Demographic](#Ideal-User-Demographic)
+   2. [User Stories](#User-Stories)
+   3. [Development Planes](#Development-Planes)
+   4. [Design](#Design)
+3. [Features](#Features)
+   1. [Design Features](#Design-Features)
+   2. [Existing Features](#Existing-Features)
+   3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+4. [Issues and Bugs](#Issues-and-Bugs)
+5. [Technologies Used](#Technologies-Used)
+   1. [Main Languages Used](#Main-Languages-Used)
+6. [Testing](#Testing)
+   - [Go to the Testing file](testing.md)
+7. [Deployment](#Deployment)
+   1. [Deploying on GitHub Pages](#Deploying-on-GitHub-Pages)
+   2. [Forking the Repository](#Forking-the-Repository)
+   3. [Creating a Clone](#Creating-a-Clone)
+8. [Credits](#Credits)
+   1. [Content](#Content)
+   2. [Media](#Media)
+   3. [Code](#Code)
+9. [Acknowledgements](#Acknowledgements)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# Introduction
 
-A blue button should appear to click: _Make Public_,
+- This small website was designed mainly for people who like and reads books. People who want to find inspiration for new books.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- The focus of the website is to create an easy way to reach people who want to find new books. To make the site more attractive, we add a rating comment section.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- The simplicity and small scale of the website is an important aspect to achieve an interest in bookmarking the return page.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- If you like simple book review sites, you have gone to enjoy this one.
 
-------
 
-## Release History
+- This is the third of four Milestone projects that the developer must complete during his Full-Stack web development program at The Code Institute.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- The most important requirements were to build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records (CRUD). [**HTML5**](https://en.wikipedia.org/wiki/HTML5),  [**CSS3**](https://en.wikipedia.org/wiki/CSS), [**JavaScript**](https://en.wikipedia.org/wiki/javascript), [**Flask**](https://flask.palletsprojects.com/en/2.0.x/) and [**MongoDB**](https://www.mongodb.com/).
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Back to the top](#table-of-contents)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+# UX
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Ideal User Demographic
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### The ideal user of this website is
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- People who like to read books.
+- People who want to find new books to read.
+- Users who like book reviews.
+- People who simply want to spend some time in a developing and fun way.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## User Stories
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### New/Potential Fans Goals:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+1. As a new user, I want to be able to easily find new books.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+2. As a new user, I want to be able to find out how this book review site works and what it is about.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+3. As a new user, I want to be able to rate the books.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+4. As a new user, I want to be able to write a review.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+5. As a new user, I want to be able to register an account.
 
-------
+6. As a new user, I want to be able to add books.
 
-## FAQ about the uptime script
+7. As a new user, I want to be able to log out from the site.
 
-**Why have you added this script?**
+### Current Fans Goals:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+1. As a current user, I want to navigate to high rated books.
 
-**How will this affect me?**
+2. As a current user, I want to navigate to my added books
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Development Planes
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+| **_[Strategy](#Strategy)_** | **_[Scope](#Scope)_** | **_[Structure](#Structure)_** | **_[Skeleton](#Skeleton)_** | **_[Surface](#Surface)_** |
+| --------------------------- | --------------------- | ----------------------------- | --------------------------- | ------------------------- |
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Strategy
 
-**So….?**
+With these goals in mind, a strategy table was created to determine the trade-off between importance and viability with the following results:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**_[Link to Strategy Trade-off as PDF](assets/readme-resources/strategy-trade-off.pdf)_**
 
-**Can I opt out?**
+![Spreadsheet Strategy](assets/readme-resources/strategy-trade-off.jpg)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Scope
+
+- The site is for people who like books and want to find new books to read.
+
+- Users who find this website are most certainly one who is looking for just and precisely for a book review and recommendation site.
+
+#### A scope was defined into two categories:
+
+- ##### Content Requirements
+
+  - The user will be looking for:
+    - Information about the books and the possibility to rate them.
+    - A quick way to find high rated books.
+
+- ##### Functionality Requirements
+  - The user will be able to:
+    - Easily navigate through the site to find the information they want.
+    - Easily find, add books and give a description and summary of the books.
+
+### Structure
+
+The information architecture was organized in a hierarchical tree structure to ensure that users could navigate through the site with ease and efficiency, with the following results:
+
+![Hierarchical tree structure](assets/readme-resources/Structure.jpg)
+
+### Skeleton
+
+Wireframe mockup was created in a Figma Workspace with providing a positive user experience in mind:
+
+**_[Link to Figma Wireframes as PDF](assets/readme-resources/Figma.pdf)_**
+
+![Wireframes screenShot as PDF](assets/readme-resources/Wireframe.jpg)
+[Back to the top](#table-of-contents)
+
+### Surface
+
+[Markup from: ami.responsive design.is](http://ami.responsivedesign.is/?url=https%3A%2F%2Fmanell0.github.io%2FMileStone-2-emoji-memory%2Fgame.html#)
+
+![The Markup from responsive design](assets/readme-resources/markup.jpg)
+
+## Design
+
+### Color Scheme
+
+The main colors used throughout the website are a mixture of dark green, white, and orange.
+
+Also has black text so that there will be a distinct difference, and it will be visible well.
+
+The chosen color scheme is chosen to get a clear and nice view to integrate with.
+
+- I find the color combination on-site [COLORS](https://coolors.co/)
+
+### Typography
+
+Font font-family: Architects Daughter is used throughout the website with Sans Serif as the fallback font in case of import failure.
+
+- I use [Google fonts](https://fonts.google.com/) for my font used on the site
+
+### Picture
+
+The selected image on the home page is modern and simple, reflecting the look and feel of the page and the game.
+The image is captivating and visually represents the site's theme.
+
+The image on index.html is a combination of Code Institute and a happy emoji.
+
+In the game itself, on the back Code Institute logo and the front are used various emojis that I found under free emojis on google.com.
+
+- The images provide alternative text to use if the element cannot be reproduced.
+
+  [Back to the top](#table-of-contents)
+
+# Features
+
+### Design Features
+
+Each page on the website has a consistent responsive navigation system through simple links. As the site is only on two pages and some pop up (Modal), no navigation bar is needed.
+
+#### Home Page and the Game Page
+
+The home and game pages have the same structure in terms of appearance.
+
+### Existing Features
+
+#### The website consists of two pages with associated Modal for both pages (index.html and game.html).
+
+- ### Start Page (index.html):
+  - Link on top of the start page to info **Info About The Game** (Modal).
+    - Here you can see information about the game. You can also see your best result (if you previously played in the same browser, using local storage o save values) as well as links to the game and back to the home page.
+  - At the top in the center of the page you have a fancy image/logo.
+    - The image is clickable and you get to the info page (Modal).
+    - Link at the bottom of the start page to the game **Start Memory Game**.
+    - Start the memory game immediately.
+- ### Game Page (game.html):
+  - At the top left is the timer clock with seconds and tenths.
+  - In the middle of the game page we find three icons/buttons:
+    - The first button is the pause/start button:
+      - Are used if you want to pause the game during the current game.
+    - The second button is the restart button:
+      - Are used to restart the game.
+    - The third button is mute or unmute button:
+      - Are used to mute or unmute in the game.
+  - At the top right is an exit button that closes the game and redirects the user to the home page (index.html).
+  - In the middle of the page is the playing surface where the game itself is played
+
+The Modal that appears when you finish the game shows the round's number of clicks and the time it took to complete the game.
+Also, the record the user has (if there is a previous record).
+At the bottom of the Modal we find two links that go to **Play Again** and **Back To Main**
+
+- ### 404 page (404.html):
+  - 404 looks similar to the start page with the difference that it is a shocking emoji as the center image instead of a happy emoji as it is on the start page. When you click on the image or text, you get to the start page.
+
+## Features to Implement in the future
+
+- [x] Make sure that the best result of a game can be saved and stored.
+
+**High Score is finish and ready!** 👍
+
+- #### Reason for not featuring in this release
+  - ~~Time and skill...~~
+
+[Back to the top](#table-of-contents)
+
+# Issues and Bugs
+
+- Problems getting my shuffle function to charge right from the start.
+
+  - Solution was to use [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+- Some problem to set up my Modals.
+
+  - Solution [modal exempel use](https://www.w3schools.com/howto/howto_css_modals.asp)
+
+- Problems getting 404.html working no matter where it goes wrong. 404.html works (https://manell0.github.io/MileStone-2-emoji-memory/adsfadfadfadfadfadf) but not if I do slash (/) after the whole URL (https://manell0.github.io/MileStone- 2-emoji-memory / index.html /).Tried to add .htaccess file with the content (ErrorDocument 404 https://manell0.github.io/MileStone-2-emoji-memory/index.html/404.html) but it does not work ?! Tried to put 404.html in all directories, but it does not work ?!
+
+  - SOLUTION: I changed all relative file paths in 404.html to absolute file paths and that solved my problem. So now 404.html works as it should! 😀
+
+- Problems with my javascript code appearing with 8 spaces when looking in GitHub. Apparently can not be changed.
+
+  - Solution: You can append ?ts=2 or ?ts=4 to the URL to change the tab-size.
+
+- This was an issue [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) Of course, I would read this before I did this project!
+
+# Technologies Used
+
+### Main Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+- [JavaScript](https://en.wikipedia.org/wiki/Javascript)
+
+### Frameworks, Libraries & Programs Used
+
+- [Bootstrap 4.3.1 used](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+
+- [Google fonts](https://fonts.google.com/)
+
+- [EasyTimer.js](https://albert-gonzalez.github.io/easytimer.js/)
+
+- [Font Awesome icons](https://fontawesome.com/icons?d=gallery&p=2&m=free)
+
+[Back to the top](#table-of-contents)
+
+# Testing
+
+[Testing information can be found in this separate testing file](testing.md)
+
+# Deployment
+
+- This project was developed using Visual Studio Code, committed to git, and pushed to GitHub using the upload file system on GitHub.
+- Some updates were done directly in edit mode on GitHub.
+
+## Deploying on GitHub Pages
+
+To deploy this page to GitHub Pages from its GitHub repository, the following steps should have taken:
+
+1. Log into [GitHub or create an account](https://github.com/).
+2. Locate the GitHub Repository.
+3. At the top of the repository, select Settings from the menu items.
+4. Scroll down the Settings page to the "GitHub Pages" section.
+5. Under "Source" click the drop-down menu labeled "None" and select "Master Branch".
+6. Upon selection, the page will automatically refresh meaning that the website is now deployed.
+7. Scroll back down to the "GitHub Pages" section to retrieve the deployed link.
+8. At the time of submitting this Milestone project the Development Branch and Master Branch are identical.
+
+## Forking the Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log into [GitHub or create an account](https://github.com/).
+2. Locate the GitHub Repository.
+3. At the top of the repository, on the right side of the page, select "Fork"
+4. You should now have a copy of the original repository in your GitHub account.
+
+## Creating a Clone
+
+How to run this project locally:
+
+1. Install the GitPod Browser Extension for Chrome.
+2. After installation, restart the browser.
+3. Log into [GitHub or create an account](https://github.com/).
+4. Locate the GitHub Repository.
+5. Click the green "GitPod" button in the top right corner of the repository. This will trigger a new GitPod workspace to be created from the code in GitHub where you can work locally.
+
+How to run this project within a local IDE, such as VSCode:
+
+1. Log in to GitHub or create an account.
+2. Locate the GitHub Repository.
+3. Under the repository name, click "Clone or download".
+4. In the Clone with HTTPs section, copy the clone URL for the repository.
+5. In your local IDE open the terminal.
+6. Change the current working directory to the location where you want the cloned directory to be made.
+7. Type 'git clone', and then paste the URL you copied in Step 3.
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+git clone https://github.com/USERNAME/REPOSITORY
+
 ```
 
-**Anything more?**
+8. Press Enter. Your local clone will be created.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Further reading and troubleshooting on cloning a repository from GitHub [**_here_**](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
----
+[Back to the top](#table-of-contents)
 
-Happy coding!
+# Credits
+
+- I have used [Rebecca Tracey-Timoneys](https://github.com/rebeccatraceyt) README file [KryanLive](https://github.com/rebeccatraceyt/KryanLive/blob/master/README.md) as a guide/template for this README file.
+
+- A tutorial on how to flip an image
+  [rotate card](https://www.youtube.com/watch?v=0iAlXko9xJk)
+
+- I have learned a lot from **Marina Ferreira** and this is a good guide that I have taken inspiration from in my project
+  [flex-box](https://marina-ferreira.github.io/tutorials/css/flexbox/#introduction)
+
+- IIFE (Immediately Invoked Function Expression) that I use for my shuffle function
+  [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+- I have used this page to implement my Modals in my project
+  [modal example use](https://www.w3schools.com/howto/howto_css_modals.asp)
+
+- I use Easy timer in my projects I learned on this page
+  [EasyTimer.js](https://albert-gonzalez.github.io/easytimer.js/)
+- I use [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
+- I have looked and taken inspiration from these pages that I got recommended from my mentor:
+  - [Memory game from Josefine Kihlstrom](https://josefinekihlstrom.github.io/Plant-Memory/)
+  - [Memory game from Yostina](https://yostina-dh.github.io/Ge-ez-Memory-Game/pages/game.html)
+
+## Content
+
+## Media
+
+- The image on the index.html and the backside image in the memory game was sourced from Google and is the Code Institute logo.
+
+  - The smileys used as front images are found on google.
+
+- Sound in the game.
+
+   - I found the sounds in the game on my computer and have no idea where they originally come from.
+
+## Code
+
+The developer consulted multiple sites to better understand the code they were trying to implement. For code that was copied and edited, the developer made sure to reference this with the code. The following sites were used on a more regular basis:
+
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3Schools](https://www.w3schools.com/) used a lot, and the Modal pop-up window came from there.
+- [Bootstrap](https://getbootstrap.com/) used for my grid system throughout the site
+- [CSS Tricks](https://css-tricks.com/) used for various spacing tricks and placement technology
+- [COLORS](https://coolors.co/)
+- [Google fonts](https://fonts.google.com/) used for my fonts (Architects Daughter and Open Sans)
+
+# Acknowledgements
+
+- I would like to thank my mentor, Owonikoko Oluwaseun, for her help and guidance throughout this process.
+
+  [Back to the top](#table-of-contents)
