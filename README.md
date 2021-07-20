@@ -163,12 +163,7 @@ Font font-family: Roboto is used throughout the website with Sans Serif as the f
 
 ### Picture
 
-The selected image on the home page is modern and simple, reflecting the look and feel of the page and the game.
-The image is captivating and visually represents the site's theme.
 
-The image on index.html is a combination of Code Institute and a happy emoji.
-
-In the game itself, on the back Code Institute logo and the front are used various emojis that I found under free emojis on google.com.
 
 - The images provide alternative text to use if the element cannot be reproduced.
 
@@ -178,19 +173,16 @@ In the game itself, on the back Code Institute logo and the front are used vario
 
 ### Design Features
 
-Each page on the website has a consistent responsive navigation system through simple links. As the site is only on two pages and some pop up (Modal), no navigation bar is needed.
+Each page on the website has a consistent, responsive navigation system through a navigation bar on the top of the site.
 
-#### Home Page and the Game Page
-
-The home and game pages have the same structure in terms of appearance.
 
 ### Existing Features
 
 #### The website consists of two pages with associated Modal for both pages (index.html and game.html).
 
-- ### Start Page (index.html):
-  - Link on top of the start page to info **Info About The Game** (Modal).
-    - Here you can see information about the game. You can also see your best result (if you previously played in the same browser, using local storage o save values) as well as links to the game and back to the home page.
+- ### Start Page:
+  - Links on top of the Home page is the same across the whole site.
+    
   - At the top in the center of the page you have a fancy image/logo.
     - The image is clickable and you get to the info page (Modal).
     - Link at the bottom of the start page to the game **Start Memory Game**.
