@@ -20,8 +20,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_books")
 def get_books():
-    books = mongo.db.books.find()
-    return render_template("books.html", books=books)
+    books = list(mongo.db.books.find())
+    vote = mongo.db.books.find_one('book_upvote')
+    return render_template("books.html", books=books, vote=vote)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -95,6 +96,10 @@ def logout():
     flash("You have logged out")
     return redirect(url_for("login"))
 
+
+@app.route("/add_book")
+def add_book():
+    return render_template("add_book.html")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Im use the base</h2>
+    
     {% for book in books %}
         {{book.book_name}}<br>
         {{book.book_author}}<br>
@@ -8,4 +8,30 @@
         {{book.book_description}}<br>
         {{book.book_upvote}}<br>
     {% endfor %}
+    
+    <ul class="collapsible popout">
+        {% for book in books %}
+        <li>
+            <div class="collapsible-header white-text teal text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ book.book_name }}</strong> : By {{ book.book_author }} | Release:  {{book.book_release}}  | {{ book.book_upvote }}
+
+                
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ book.category_name }}</strong>
+                <div></div>
+                <div><img src="https://images-na.ssl-images-amazon.com/images/I/41wBo8-XN7L._AC_SX368_.jpg" alt=""></div>
+                <p>{{ book.book_description }}</p>
+            </div>
+        </li>
+        <div class="row">
+            {{vote}}
+            {% for i in range(4) %}
+                {{ i }}
+            {% endfor %}
+        </div>
+        {% endfor %}
+        
+    </ul>
 {% endblock %}
