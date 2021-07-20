@@ -147,7 +147,7 @@ Wireframe mockup was created in a Figma Workspace with providing a positive user
 
 ### Color Scheme
 
-The main colors used throughout the website are a mixture of dark green, white, and orange.
+The main colors used throughout the website are a mixture of green, creamy white.
 
 Also has black text so that there will be a distinct difference, and it will be visible well.
 
@@ -157,7 +157,7 @@ The chosen color scheme is chosen to get a clear and nice view to integrate with
 
 ### Typography
 
-Font font-family: Architects Daughter is used throughout the website with Sans Serif as the fallback font in case of import failure.
+Font font-family: Roboto is used throughout the website with Sans Serif as the fallback font in case of import failure.
 
 - I use [Google fonts](https://fonts.google.com/) for my font used on the site
 
@@ -359,10 +359,6 @@ Further reading and troubleshooting on cloning a repository from GitHub [**_here
 - The image on the index.html and the backside image in the memory game was sourced from Google and is the Code Institute logo.
 
   - The smileys used as front images are found on google.
-
-- Sound in the game.
-
-   - I found the sounds in the game on my computer and have no idea where they originally come from.
 
 ## Code
 

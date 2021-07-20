@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body{
-    background-color:cornsilk;
+    background-color:rgb(253, 249, 230);
+    font-family: 'Roboto', sans-serif;
 }
 
 .text-shadow{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cornsilk{
+    background-color: cornsilk;
 }
