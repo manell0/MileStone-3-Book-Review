@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align text-shadow">Register</h3>
+    <h3 class="center-align text-shadow">Log In</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel cornsilk">
                 <!-- USERNAME -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fas fa-user-plus prefix teal-text"></i>
+                        <i class="fas fa-user-cog prefix teal-text"></i>
                         <input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
@@ -24,20 +24,20 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                <!-- REGISTER -->
+                <!-- LOG IN -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large light-white text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
+                        Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
         </form>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already Registered? <a href="{{ url_for('login') }}" class="teal-text">Log In</a>
-            </p>
+        <div class="row">
+            <div class="col s12">
+                <p class="center-align">
+                    Register Here! <a href="{{ url_for('register') }}" class="teal-text">Register Account</a>
+                </p>
+            </div>
         </div>
     </div>
 
