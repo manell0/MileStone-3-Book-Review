@@ -5,8 +5,8 @@
     <h3 class="teal-text center-align">Add book</h3>
 
     <div class="row card-panel green lighten-5">
-        <form class="col s12" method="POST" action="">
-
+        <form class="col s12" method="POST" action="{{ url_for('add_book') }}">
+          <!-- Categories -->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-folder-open prefix teal-text"></i>
@@ -21,7 +21,7 @@
               <label for="category_name">Book Category</label>
             </div>
           </div>
-
+          <!-- Book Name -->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-book prefix teal-text"></i>
@@ -30,7 +30,7 @@
               <label for="book_name">Book Name</label>
             </div>
           </div>
-
+          <!-- Book Author -->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-user-edit prefix teal-text"></i>
@@ -39,7 +39,7 @@
               <label for="book_author">Book Author</label>
             </div>
           </div>
-
+          <!-- Release Year -->
           <div class="row">
             <div class="input-field col s12">
               <i class="fas fa-calendar-alt prefix teal-text"></i>
@@ -47,7 +47,7 @@
               <label for="book_release">Release Date (2020)</label>
             </div>
           </div>
-
+          <!-- Book Description -->
           <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix teal-text"></i>
@@ -55,13 +55,20 @@
                 <label for="book_description">Book Description</label>
             </div>
           </div>
-
+          <!-- Give point section -->
           <p class="range-field">
             <label for="book_upvote">Points for the book (0 - 5)</label>
             <input type="range" id="book_upvote" name="book_upvote" min="0" max="5" />
             
           </p>
-
+          <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large darken-1 text-shadow">
+                        Add Book <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
         </form>
       </div>
 
