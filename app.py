@@ -102,7 +102,7 @@ def add_book():
     if request.method == "POST":
         book = {
             #"some_data": request.form.getlist("if U want to take a hole list with same name attribute")
-            "cetegory_name": request.form.get("category_name"),
+            "category_name": request.form.get("category_name"),
             "book_name": request.form.get("book_name"),
             "book_author": request.form.get("book_author"),
             "book_release": request.form.get("book_release"),
@@ -121,6 +121,21 @@ def add_book():
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
+    if request.method == "POST":
+        submit = {
+            #"some_data": request.form.getlist("if U want to take a hole list with same name attribute")
+            "category_name": request.form.get("category_name"),
+            "book_name": request.form.get("book_name"),
+            "book_author": request.form.get("book_author"),
+            "book_release": request.form.get("book_release"),
+            "book_description": request.form.get("book_description"),
+            "book_upvote": request.form.get("book_upvote"),
+            "created_by": session["user"]
+
+        }
+        mongo.db.books.update({"_id": ObjectId(book_id)}, submit)
+        flash("Book Successfully Updated")
+
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_book.html", book=book, categories=categories )
