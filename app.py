@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# Start page
 @app.route("/")
 @app.route("/get_books")
 def get_books():
@@ -25,7 +26,7 @@ def get_books():
     return render_template("books.html", books=books, vote=vote)
 
 
-
+# Search section on start page
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -33,7 +34,7 @@ def search():
     return render_template("books.html", books=books)
 
 
-
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -58,6 +59,7 @@ def register():
     return render_template("register.html")
 
 
+# LogIn Page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -86,6 +88,7 @@ def login():
     return render_template("login.html")
 
 
+# Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab session username
@@ -98,6 +101,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Log out
 @app.route("/logout")
 def logout():
     # remove user session cookies
@@ -106,6 +110,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# User Add book page
 @app.route("/add_book", methods=["GET","POST"])
 def add_book():
     if request.method == "POST":
@@ -128,6 +133,7 @@ def add_book():
     return render_template("add_book.html", categories=categories )
 
 
+# Edit Book 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
@@ -150,13 +156,14 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book, categories=categories )
 
 
+# Delete user owner book
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book Successfully Deleted")
     return redirect(url_for("get_books"))
 
-
+# Categories CRUD for admin only (login = admin, password = admin)
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))

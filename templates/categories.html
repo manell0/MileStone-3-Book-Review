@@ -26,7 +26,25 @@
                         </div>
                         <div class="card-action">
                             <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn green accent-4">Edit</a>
-                            <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn red accent-1">Delete</a>
+
+                            <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Delete Category</a>
+
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                            <a href="{{ url_for('delete_category', category_id=category._id) }}" class="waves-effect waves-red btn-small">Agree</a>
+                            <a href="{{ url_for('get_categories') }}" class="modal-close waves-effect waves-red btn-small red accent-1">Cancel</a>
+                            
+                            </div>
+                        </div>        
+
+                            
+                        
                         </div>
                     </div>
                 </div>
