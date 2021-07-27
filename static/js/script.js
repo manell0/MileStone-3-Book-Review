@@ -41,3 +41,6 @@ $(document).ready(function(){
   }
 });
 
+function redirect_home() {
+    location.replace("http://milestone-3-book-review.herokuapp.com/get_books")
+  }

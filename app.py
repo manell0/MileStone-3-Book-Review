@@ -62,6 +62,7 @@ def register():
 # LogIn Page
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    session.clear()
     if request.method == "POST":
         # check if username exrists
         existing_user = mongo.db.users.find_one(
@@ -96,7 +97,10 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        books = list(mongo.db.books.find())
+        vote = mongo.db.books.find_one('book_upvote')
+        #return render_template("books.html", books=books, vote=vote)
+        return render_template("profile.html", username=username, books=books, vote=vote)
 
     return redirect(url_for("login"))
 
@@ -111,8 +115,9 @@ def logout():
 
 
 # User Add book page
-@app.route("/add_book", methods=["GET","POST"])
+@app.route("/add_book", methods=["GET", "POST"])
 def add_book():
+
     if request.method == "POST":
         book = {
             #"some_data": request.form.getlist("if U want to take a hole list with same name attribute")
