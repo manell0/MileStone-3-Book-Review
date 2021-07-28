@@ -30,7 +30,8 @@
                     
                 </div>
                    
-                    {% if session.user | lower == book.created_by | lower %}
+                    {% if session.user | lower == book.created_by | lower or session.user|lower == "admin"|lower %}
+                    
 
                         <!-- Modal Trigger -->
                         
@@ -59,7 +60,7 @@
                     {% endif %}
                 
                 <div class="col s9">
-                    <strong>{{ book.book_name }}</strong> | By:  {{ book.book_author }} | Release:  {{book.book_release}}  | Book Point: {{ book.book_upvote }} 
+                    {{ book.book_name }} | By:  {{ book.book_author }} | Release:  {{book.book_release}}  | Book Point: {{ book.book_upvote }} 
                     
                 </div>
                 
@@ -68,11 +69,12 @@
                 
             </div>
             <div class="collapsible-body">
-                <strong>{{ book.category_name }}</strong>
-                <!--<div></div>
-                <div><img src="https://images-na.ssl-images-amazon.com/images/I/41wBo8-XN7L._AC_SX368_.jpg" alt=""></div>-->
-                <p>{{ book.book_description }}</p>
-                <p><em>by: {{ book.created_by }}</em></p>
+                <h5>{{ book.category_name }}</h5>
+              
+                <div><img src="{{ book.book_image }}" alt="Book Image" width="200" height="300"></div>
+                <h6>Description: </h6>
+                <textarea>{{ book.book_description }}</textarea>
+                <p><em>Added by: {{ book.created_by }}</em></p>
             </div>
         </li>
         
