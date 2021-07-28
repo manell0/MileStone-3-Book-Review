@@ -5,6 +5,12 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.alert-error {
+    padding: 8px;
+    background-color: red;
+    color: white;
+  }
+
 .flashes h4 {
     line-height: 2;
 }
@@ -17,11 +23,41 @@ body{
     background-color: cornsilk;
 }
 
-.btn-small{
-    margin: 5px;
-}
+
+
 
 .collapsible-header .col strong {
     margin: 5px;
     line-height: 42px;
 }
+
+.brand-logo{
+    margin-left: 5px;
+}
+
+.right{
+    text-align: right;
+}
+
+.btn-large{
+    
+    width: 250px;
+    margin: 5px;
+}
+
+.btn-small{
+    width: 80px;
+    margin: 5px;
+    padding: 1px;
+}
+
+@media screen and (max-width: 380px) {
+    .hideing{
+        /*visibility: hidden;*/
+        display: none;
+    }
+    .small{
+        font-size: 12px;
+    }
+    
+  }
