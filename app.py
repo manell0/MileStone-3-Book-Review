@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Start page
 @app.route("/")
 @app.route("/get_books")
@@ -45,7 +46,7 @@ def register():
         if existing_user:
             flash("Username already exists.")
             return redirect(url_for("register"))
-        
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -169,6 +170,7 @@ def delete_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})
     flash("Book Successfully Deleted")
     return redirect(url_for("get_books"))
+    
 
 # Categories CRUD for admin only (login = admin, password = admin)
 @app.route("/get_categories")
@@ -183,6 +185,7 @@ def add_category():
         category = {
             "category_name": request.form.get("category_name")
         }
+
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
         return redirect("get_categories")

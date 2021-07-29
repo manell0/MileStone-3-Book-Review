@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('.tooltipped').tooltip();
     $('.sidenav').sidenav({edge: "right"});
     $('.collapsible').collapsible();
     $('select').formSelect();
@@ -42,5 +43,15 @@ $(document).ready(function(){
 });
 
 function redirect_home() {
-    location.replace("http://milestone-3-book-review.herokuapp.com/get_books")
+    location.replace("http://milestone-3-book-review.herokuapp.com/get_books");
   }
+
+function confirm_alert() {
+  let r = confirm("Press a button!");
+  if (r == true) {
+    pass
+  } else {
+    location.replace("http://milestone-3-book-review.herokuapp.com/get_books");
+  }
+  
+}
