@@ -99,9 +99,9 @@ This is a simple website where you can upload details of books, and allow users 
 
 With these goals in mind, a strategy table was created to determine the trade-off between importance and viability with the following results:
 
-**_[Link to Strategy Trade-off as PDF](assets/readme-resources/strategy-trade-off.pdf)_**
+**_[Link to Strategy Trade-off as PDF](static/readme-resources/strategy-trade-off.pdf)_**
 
-![Spreadsheet Strategy](assets/readme-resources/strategy-trade-off.jpg)
+![Spreadsheet Strategy](static/readme-resources/strategy-trade-off.jpg)
 
 ### Scope
 
