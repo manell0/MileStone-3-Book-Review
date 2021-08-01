@@ -8,6 +8,7 @@
 
 body{
     background-color:rgb(253, 249, 230);
+    background-color: #fff;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -36,7 +37,7 @@ body{
 
 .collapsible-header .col strong {
     margin: 5px;
-    line-height: 42px;
+    line-height: 40px;
 }
 
 .brand-logo{
@@ -64,6 +65,12 @@ body{
 }
 .bolder{
     font-weight: 700;
+    
+    
+}
+
+.under-line{
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 641px) {
