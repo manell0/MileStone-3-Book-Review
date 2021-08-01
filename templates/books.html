@@ -1,32 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h3 class="teal-text center-align text-shadow">All Books</h3>
-
-    <div class="row card-panel lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix teal-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="1" class="validate" required>
-                    <label for="query">Search</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_books') }}" class="red btn-small text-shadow"><i class="fas fa-backspace"></i><span class="hideing"> Reset</span></a>
-                    <button type="submit" class="teal darken-1 btn-small text-shadow"><i class="fas fa-search"></i><span class="hideing"> Search</span></button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    {% if books|length > 0 %}
-
-    <ul class="collapsible popout">
-        {% for book in books %}
-        <li>
-            <div class="collapsible-header white-text teal text-shadow">
-                <div class="col s1 {% extends "base.html" %}
-{% block content %}
 <h3 class="teal-text center-align text-shadow">All Books</h3>
 <div class="row card-panel lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -74,45 +47,4 @@
 {% else %}
 <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
 {% endif %}
-{% endblock %}hide-on-med-and-down">
-                    <i class="fas fa-caret-down"></i>
-                    
-                </div>
-                   
-                    {% if session.user | lower == book.created_by | lower or session.user|lower == "admin"|lower %}
-                    <!--<button onClick='confirm_alert()'>Subba</button>-->
-                    
-                    <a href="{{ url_for('delete_book', book_id=book._id) }}" class="red waves-effect waves btn-small tooltipped" data-position="right" data-tooltip="NOTE! The book disappears immediately and no verification takes place !!!">Del</a>
-                    <!--<a href = "{{ url_for('delete_book', book_id=book._id) }}" class="red waves-effect waves btn-small" style = "color: white" onclick = "{if (confirm ( '? Determining record it')) {this. document.formname.submit (); return true;} return false;} "> delete </a>-->
-                    <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small waves-effect light-green accent-4">Edit</a>
-                                              
-                    {% endif %}
-                
-                    <div class="col s9">
-                        <strong>{{ book.book_name }}</strong> | By:  {{ book.book_author }} | Release:  {{book.book_release}}  | Book Point: {{ book.book_upvote }} 
-                        
-                    </div>
-                
-                
-
-                
-            </div>
-            <div class="collapsible-body">
-                <h5>{{ book.category_name }}</h5>
-              
-                <div><img src="{{ book.book_image }}" alt="Book Image" width="200" height="300"></div>
-                <h6>Description: </h6>
-                <textarea>{{ book.book_description }}</textarea>
-                <p><em>Added by: {{ book.created_by }}</em></p>
-            </div>
-        </li>
-        
-        {% endfor %}
-        
-    </ul>
-
-    {% else %}
-        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
-    {% endif %}
-
 {% endblock %}
