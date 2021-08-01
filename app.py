@@ -77,7 +77,7 @@ def login():
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "get_books", username=session["user"]))
             else:
                 # password not match
                 flash("Incorrect Username and/or Password")

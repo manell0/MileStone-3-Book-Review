@@ -4,15 +4,7 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.modal').modal();
-    $(".datepicker").datepicker({
-        selectYears: true, 
-        format: "yyyy",
-        yearRange: 100,
-        showClearBtn: true,
-        i18n: {
-            done: "Select"
-      }
-  });
+    
   validateMaterializeSelect();
   function validateMaterializeSelect() {
       let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
@@ -46,12 +38,3 @@ function redirect_home() {
     location.replace("http://milestone-3-book-review.herokuapp.com/get_books");
   }
 
-function confirm_alert() {
-  let r = confirm("Press a button!");
-  if (r == true) {
-    pass
-  } else {
-    location.replace("http://milestone-3-book-review.herokuapp.com/get_books");
-  }
-  
-}
