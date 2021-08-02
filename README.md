@@ -178,11 +178,18 @@ Each page on the website has a consistent, responsive navigation system through 
 
 ### Existing Features
 
-#### The website consists of four main pages (Home, users books, Add book, Log Out/ Log In and register) and Manage Categories only for Admin.
+#### The website consists of four main pages (Home, users books, Add book, Log Out/ Log In and register) and Manage Categories only for Admin (Login: Username = admin, and password = admin).
 
 - ### Start Page (Home):
   - Navbar on top of the Home page is the same across the whole site.
-    
+   - Home goes to the start page.
+   - Users Books goes to the owner's books page for editing and deletion.
+   - Add Book goes to add_book form.
+   - Manage Categories (Only for admin) goes to the page where admin can add and delete categories(LogIn: Username = admin, and password = admin).
+   - Log In / Log Out page for log in and log out.
+   - Register for new user to register.
+   
+   
   - At the top of the page, we find our navbar which turns into a burger for smaller screen sizes..
     - At the top of the page is a search box.
     - In the center of the page we have the Users' posted books that are clickable for expansion for more information.
@@ -195,11 +202,9 @@ Each page on the website has a consistent, responsive navigation system through 
     - The second button is the delete button:
       - Are used to immediately delete the selected book .
     
-  - At the top right is an exit button that closes the game and redirects the user to the home page (index.html).
-  - In the middle of the page is the playing surface where the game itself is played
 
 - ### 404 page (404.html):
-  - 404 looks similar to the start page with the difference that it is a shocking emoji as the center image instead of a happy emoji as it is on the start page. When you click on the image or text, you get to the start page.
+  - Not done yet due to lack of time. &#129324;
 
 ## Features to Implement in the future
 
@@ -212,9 +217,6 @@ Each page on the website has a consistent, responsive navigation system through 
 
 - Problems getting verification for book removal to work. Ended up lacking time, so I had to put that feature on future implement.
 
-- Problems getting 404.html working no matter where it goes wrong. 404.html works (https://manell0.github.io/MileStone-2-emoji-memory/adsfadfadfadfadfadf) but not if I do slash (/) after the whole URL (https://manell0.github.io/MileStone- 2-emoji-memory / index.html /).Tried to add .htaccess file with the content (ErrorDocument 404 https://manell0.github.io/MileStone-2-emoji-memory/index.html/404.html) but it does not work ?! Tried to put 404.html in all directories, but it does not work ?!
-
-  - SOLUTION: I changed all relative file paths in 404.html to absolute file paths and that solved my problem. So now 404.html works as it should! 😀
 
 - Problems with my javascript code appearing with 8 spaces when looking in GitHub. Apparently can not be changed.
 
@@ -307,6 +309,90 @@ git clone https://github.com/USERNAME/REPOSITORY
 8. Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [**_here_**](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+
+
+
+
+
+
+
+
+
+This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
+
+Local Deployment: To reproduce this project within a local deployement, use the following steps and requirements:
+
+1. Have the following installed in your IDE of choice:
+   - Git (for version control)
+
+   - pip (package installer for Python; pip3 was used at the time of production: April 2020)
+
+   - Python3 (the programming language used to produce the backend logic of this project) using the following command:
+      - pip3 install dnspython
+
+- Flask (the library used to add special features and functionalities to this Python application) using the following command:
+      - pip3 install flask
+
+2. Create an account with MongoDB, following the MongoDB instructions for the creation of a Cluster and Collections, and connect your database server with your Flask application:
+
+   - From your MongoDB cluster dashboard >> click on CONNECT >> choose "Connect your application" >> Driver: Python and Version: your python version.
+
+   - Register your MONGO_URI credentials inside your env.py file withing your project, by using the follwoing commands:
+
+      - touch .gitignore
+      - touch env.py
+   - Connect your MongoDB data to your Flask app using the following command:
+
+      - pip3 install flask-pymongo
+   
+   - Add the environment variables to your env.py file:
+
+      import os
+
+      os.environ.setdefault("MONGO_URI", "your_mongodb_credential_data")
+      os.environ.setdefault("MONGO_DBNAME", "your_mongodb_name")
+      os.environ.setdefault("IP", "0.0.0.0")
+      os.environ.setdefault("PORT", "5000")
+      os.environ.setdefault("SECRET_KEY", "your_secret_key")
+
+3. Install additional packages:
+
+   - pip3 install flask-paginate
+
+4. Update the requirements.txt file using the following command:
+
+   - pip3 freeze > requirements.txt
+
+5. These files were added, commited and pushed to github using the commands git add git commit git push .
+
+Heroku Deployment: The Project's source file was also pushed to Heroku via the heroku master branch. To deploy this app to a Heroku app use the following steps:
+
+1. A requirements.txt file was created using the terminal command pip3 freeze > requirements.txt.
+
+2. A Procfile was created using the terminal command echo web: python app.py > Procfile.
+
+3. A new app was created for the Cryptopedia on Heroku dashboard, by clicking the "New" button and setting the region to Europe. It is necessary to open an account with Heroku and start a new app installation inside your heroku dashboard.
+
+4. New app configurations including environament variables were added on "Settings" > "Reveal Config Vars" inside the Heroku dashboard:
+
+   - IP: 0.0.0.0
+   - PORT: 5000
+   - SECRET_KEY: your_secret_key
+   - MONGO_URI: your_mongodb_credential_data
+   - MONGO_DBNAME: your_mongodb_name
+
+5. From the Heroku dashboard the app was deployed using the "Deploy button" and connected to the gihub master branch for automatic deployments.
+
+6. These files were added, commited and pushed to github using the commands git add git commit git push .
+
+7. The web app is now successfully deployed.
+
+
+
+
+
+
 
 [Back to the top](#table-of-contents)
 
