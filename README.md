@@ -311,16 +311,6 @@ git clone https://github.com/USERNAME/REPOSITORY
 Further reading and troubleshooting on cloning a repository from GitHub [**_here_**](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 
-
-
-
-
-
-
-
-
-
-
 ## Local Deployment: 
 This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
 
@@ -344,7 +334,7 @@ To reproduce this project within a local deployement, use the following steps an
    - Register your MONGO_URI credentials inside your env.py file withing your project, by using the follwoing commands:
       - touch .gitignore
       - touch env.py
-      - 
+      
    - Connect your MongoDB data to your Flask app using the following command:
       - pip3 install flask-pymongo
    
