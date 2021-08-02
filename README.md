@@ -321,7 +321,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [**_here
 
 This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
 
-Local Deployment: To reproduce this project within a local deployement, use the following steps and requirements:
+## Local Deployment: To reproduce this project within a local deployement, use the following steps and requirements:
 
 1. Have the following installed in your IDE of choice:
    - Git (for version control)
@@ -366,7 +366,8 @@ Local Deployment: To reproduce this project within a local deployement, use the 
 
 5. These files were added, commited and pushed to github using the commands git add git commit git push .
 
-Heroku Deployment: The Project's source file was also pushed to Heroku via the heroku master branch. To deploy this app to a Heroku app use the following steps:
+## Heroku Deployment: 
+The Project's source file was also pushed to Heroku via the heroku master branch. To deploy this app to a Heroku app use the following steps:
 
 1. A requirements.txt file was created using the terminal command pip3 freeze > requirements.txt.
 
