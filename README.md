@@ -319,15 +319,17 @@ Further reading and troubleshooting on cloning a repository from GitHub [**_here
 
 
 
-This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
+
 
 ## Local Deployment: 
+This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
+
 To reproduce this project within a local deployement, use the following steps and requirements:
 
 1. Have the following installed in your IDE of choice:
    - Git (for version control)
 
-   - pip (package installer for Python; pip3 was used at the time of production: April 2020)
+   - pip (package installer for Python; pip3 was used at the time of production: Juli 2021)
 
    - Python3 (the programming language used to produce the backend logic of this project) using the following command:
       - pip3 install dnspython
@@ -399,32 +401,18 @@ The Project's source file was also pushed to Heroku via the heroku master branch
 
 - I have used [Rebecca Tracey-Timoneys](https://github.com/rebeccatraceyt) README file [KryanLive](https://github.com/rebeccatraceyt/KryanLive/blob/master/README.md) as a guide/template for this README file.
 
-- A tutorial on how to flip an image
-  [rotate card](https://www.youtube.com/watch?v=0iAlXko9xJk)
+- I have used [Kes Cardoso](https://github.com/kescardoso) Deployment for Heroku as inspiration on this README.md.
 
-- I have learned a lot from **Marina Ferreira** and this is a good guide that I have taken inspiration from in my project
-  [flex-box](https://marina-ferreira.github.io/tutorials/css/flexbox/#introduction)
+- I have used tutor Tim Nelson´s mini project (Task Manager) as a basis for my milestone project.
+  [Tim Nelson´s mini project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/054c3813e82e4195b5a4d8cd8a99ebaa/)
 
-- IIFE (Immediately Invoked Function Expression) that I use for my shuffle function
-  [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
-
-- I have used this page to implement my Modals in my project
-  [modal example use](https://www.w3schools.com/howto/howto_css_modals.asp)
-
-- I use Easy timer in my projects I learned on this page
-  [EasyTimer.js](https://albert-gonzalez.github.io/easytimer.js/)
-- I use [Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
-- I have looked and taken inspiration from these pages that I got recommended from my mentor:
-  - [Memory game from Josefine Kihlstrom](https://josefinekihlstrom.github.io/Plant-Memory/)
-  - [Memory game from Yostina](https://yostina-dh.github.io/Ge-ez-Memory-Game/pages/game.html)
 
 ## Content
 
 ## Media
 
-- The image on the index.html and the backside image in the memory game was sourced from Google and is the Code Institute logo.
+- The images on the pages are copied (link address) is found on Google.
 
-  - The smileys used as front images are found on google.
 
 ## Code
 
@@ -432,8 +420,8 @@ The developer consulted multiple sites to better understand the code they were t
 
 - [Stack Overflow](https://stackoverflow.com/)
 - [W3Schools](https://www.w3schools.com/) used a lot, and the Modal pop-up window came from there.
-- [Bootstrap](https://getbootstrap.com/) used for my grid system throughout the site
-- [CSS Tricks](https://css-tricks.com/) used for various spacing tricks and placement technology
+- [Materialize](https://materializecss.com/) used for my grid system throughout the site
+- [MongoDB docs](https://docs.mongodb.com/manual/) used for better database understanding.
 - [COLORS](https://coolors.co/)
 - [Google fonts](https://fonts.google.com/) used for my fonts (Architects Daughter and Open Sans)
 
