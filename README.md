@@ -147,9 +147,9 @@ Wireframe mockup was created in a Figma Workspace with providing a positive user
 
 ### Color Scheme
 
-The main colors used throughout the website are a mixture of green, creamy white.
+The main colors used throughout the website are teal, creamy white and little brown for headers.
 
-Also has black text so that there will be a distinct difference, and it will be visible well.
+
 
 The chosen color scheme is chosen to get a clear and nice view to integrate with.
 
@@ -163,9 +163,9 @@ Font font-family: Roboto is used throughout the website with Sans Serif as the f
 
 ### Picture
 
+- The images used on the page are copied link addresses found via Google.
 
-
-- The images provide alternative text to use if the element cannot be reproduced.
+- The images provide a static alternative text to use if the element cannot be reproduced.
 
   [Back to the top](#table-of-contents)
 
@@ -178,54 +178,39 @@ Each page on the website has a consistent, responsive navigation system through 
 
 ### Existing Features
 
-#### The website consists of two pages with associated Modal for both pages (index.html and game.html).
+#### The website consists of four main pages (Home, users books, Add book, Log Out/ Log In and register) and Manage Categories only for Admin.
 
-- ### Start Page:
-  - Links on top of the Home page is the same across the whole site.
+- ### Start Page (Home):
+  - Navbar on top of the Home page is the same across the whole site.
     
-  - At the top in the center of the page you have a fancy image/logo.
-    - The image is clickable and you get to the info page (Modal).
-    - Link at the bottom of the start page to the game **Start Memory Game**.
-    - Start the memory game immediately.
-- ### Game Page (game.html):
-  - At the top left is the timer clock with seconds and tenths.
-  - In the middle of the game page we find three icons/buttons:
-    - The first button is the pause/start button:
-      - Are used if you want to pause the game during the current game.
-    - The second button is the restart button:
-      - Are used to restart the game.
-    - The third button is mute or unmute button:
-      - Are used to mute or unmute in the game.
+  - At the top of the page, we find our navbar which turns into a burger for smaller screen sizes..
+    - At the top of the page is a search box.
+    - In the center of the page we have the Users' posted books that are clickable for expansion for more information.
+    
+- ### User Owners books:
+  - Here, the user can edit and delete their uploaded books.
+  - In the expandable field we find two (green for edit and red for delete) icons/buttons:
+    - The first button is the green edit button:
+      - Are used if you want to edit your own books.
+    - The second button is the delete button:
+      - Are used to immediately delete the selected book .
+    
   - At the top right is an exit button that closes the game and redirects the user to the home page (index.html).
   - In the middle of the page is the playing surface where the game itself is played
-
-The Modal that appears when you finish the game shows the round's number of clicks and the time it took to complete the game.
-Also, the record the user has (if there is a previous record).
-At the bottom of the Modal we find two links that go to **Play Again** and **Back To Main**
 
 - ### 404 page (404.html):
   - 404 looks similar to the start page with the difference that it is a shocking emoji as the center image instead of a happy emoji as it is on the start page. When you click on the image or text, you get to the start page.
 
 ## Features to Implement in the future
 
-- [x] Make sure that the best result of a game can be saved and stored.
+- When deleting a book or category, make sure that it is verified. Instead of the book being removed immediately without verification.
 
-**High Score is finish and ready!** 👍
-
-- #### Reason for not featuring in this release
-  - ~~Time and skill...~~
 
 [Back to the top](#table-of-contents)
 
 # Issues and Bugs
 
-- Problems getting my shuffle function to charge right from the start.
-
-  - Solution was to use [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
-
-- Some problem to set up my Modals.
-
-  - Solution [modal exempel use](https://www.w3schools.com/howto/howto_css_modals.asp)
+- Problems getting verification for book removal to work. Ended up lacking time, so I had to put that feature on future implement.
 
 - Problems getting 404.html working no matter where it goes wrong. 404.html works (https://manell0.github.io/MileStone-2-emoji-memory/adsfadfadfadfadfadf) but not if I do slash (/) after the whole URL (https://manell0.github.io/MileStone- 2-emoji-memory / index.html /).Tried to add .htaccess file with the content (ErrorDocument 404 https://manell0.github.io/MileStone-2-emoji-memory/index.html/404.html) but it does not work ?! Tried to put 404.html in all directories, but it does not work ?!
 
@@ -234,8 +219,6 @@ At the bottom of the Modal we find two links that go to **Play Again** and **Bac
 - Problems with my javascript code appearing with 8 spaces when looking in GitHub. Apparently can not be changed.
 
   - Solution: You can append ?ts=2 or ?ts=4 to the URL to change the tab-size.
-
-- This was an issue [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) Of course, I would read this before I did this project!
 
 # Technologies Used
 
@@ -247,13 +230,19 @@ At the bottom of the Modal we find two links that go to **Play Again** and **Bac
 
 - [JavaScript](https://en.wikipedia.org/wiki/Javascript)
 
+- [Python](https://www.python.org/)
+
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+
+- [MongoDB](https://www.mongodb.com/)
+
 ### Frameworks, Libraries & Programs Used
 
-- [Bootstrap 4.3.1 used](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+- [Materialize](https://materializecss.com/)
 
 - [Google fonts](https://fonts.google.com/)
 
-- [EasyTimer.js](https://albert-gonzalez.github.io/easytimer.js/)
+- [jQuery](https://jquery.com/)
 
 - [Font Awesome icons](https://fontawesome.com/icons?d=gallery&p=2&m=free)
 
@@ -265,7 +254,7 @@ At the bottom of the Modal we find two links that go to **Play Again** and **Bac
 
 # Deployment
 
-- This project was developed using Visual Studio Code, committed to git, and pushed to GitHub using the upload file system on GitHub.
+- This project was developed using Gitpod, committed to git, and pushed to GitHub using the bash in Gitpod.
 - Some updates were done directly in edit mode on GitHub.
 
 ## Deploying on GitHub Pages
