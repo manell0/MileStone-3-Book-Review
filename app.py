@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_books")
 def get_books():
-    books = list(mongo.db.books.find().sort("_id", 1))
+    books = list(mongo.db.books.find().sort("_id", -1))
     vote = mongo.db.books.find_one('book_upvote')
     return render_template("books.html", books=books, vote=vote)
 
