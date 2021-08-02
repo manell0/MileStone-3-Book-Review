@@ -321,7 +321,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [**_here
 
 This project was developed using Gitpod as the chosen IDE and GitHub as a remote repository. The Project's source files were regularly pushed to the GitHub repository [Book Review repository](https://github.com/manell0/MileStone-3-Book-Review) via the master branch.
 
-## Local Deployment: To reproduce this project within a local deployement, use the following steps and requirements:
+## Local Deployment: 
+To reproduce this project within a local deployement, use the following steps and requirements:
 
 1. Have the following installed in your IDE of choice:
    - Git (for version control)
@@ -339,15 +340,14 @@ This project was developed using Gitpod as the chosen IDE and GitHub as a remote
    - From your MongoDB cluster dashboard >> click on CONNECT >> choose "Connect your application" >> Driver: Python and Version: your python version.
 
    - Register your MONGO_URI credentials inside your env.py file withing your project, by using the follwoing commands:
-
       - touch .gitignore
       - touch env.py
+      - 
    - Connect your MongoDB data to your Flask app using the following command:
-
       - pip3 install flask-pymongo
    
    - Add the environment variables to your env.py file:
-
+      ```
       import os
 
       os.environ.setdefault("MONGO_URI", "your_mongodb_credential_data")
@@ -355,13 +355,11 @@ This project was developed using Gitpod as the chosen IDE and GitHub as a remote
       os.environ.setdefault("IP", "0.0.0.0")
       os.environ.setdefault("PORT", "5000")
       os.environ.setdefault("SECRET_KEY", "your_secret_key")
-
+      ```
 3. Install additional packages:
-
    - pip3 install flask-paginate
 
 4. Update the requirements.txt file using the following command:
-
    - pip3 freeze > requirements.txt
 
 5. These files were added, commited and pushed to github using the commands git add git commit git push .
@@ -376,13 +374,13 @@ The Project's source file was also pushed to Heroku via the heroku master branch
 3. A new app was created for the Cryptopedia on Heroku dashboard, by clicking the "New" button and setting the region to Europe. It is necessary to open an account with Heroku and start a new app installation inside your heroku dashboard.
 
 4. New app configurations including environament variables were added on "Settings" > "Reveal Config Vars" inside the Heroku dashboard:
-
+   ```
    - IP: 0.0.0.0
    - PORT: 5000
    - SECRET_KEY: your_secret_key
    - MONGO_URI: your_mongodb_credential_data
    - MONGO_DBNAME: your_mongodb_name
-
+   ```
 5. From the Heroku dashboard the app was deployed using the "Deploy button" and connected to the gihub master branch for automatic deployments.
 
 6. These files were added, commited and pushed to github using the commands git add git commit git push .
