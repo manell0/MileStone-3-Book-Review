@@ -139,7 +139,7 @@ Wireframe mockup was created in a Figma Workspace with providing a positive user
 
 ### Surface
 
-[Markup from: ami.responsive design.is](https://dashboard.heroku.com/apps/milestone-3-book-review/settings)
+[Markup from: ami.responsive design.is](http://milestone-3-book-review.herokuapp.com/get_books)
 
 ![The Markup from responsive design](static/readme-resources/markup.jpg)
 
