@@ -132,9 +132,9 @@ The information architecture was organized in a hierarchical tree structure to e
 
 Wireframe mockup was created in a Figma Workspace with providing a positive user experience in mind:
 
-**_[Link to Figma Wireframes as PDF](assets/readme-resources/Figma.pdf)_**
+**_[Link to Figma Wireframes as PDF](static/readme-resources/wireframe.pdf)_**
 
-![Wireframes screenShot as PDF](assets/readme-resources/Wireframe.jpg)
+![Wireframes screenShot as PDF](static/readme-resources/Wireframe.jpg)
 [Back to the top](#table-of-contents)
 
 ### Surface
