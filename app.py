@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_books")
 def get_books():
-    books = list(mongo.db.books.find())
+    books = list(mongo.db.books.find().sort("_id", 1))
     vote = mongo.db.books.find_one('book_upvote')
     return render_template("books.html", books=books, vote=vote)
 
@@ -63,7 +63,7 @@ def register():
 # LogIn Page
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    session.clear()
+    
     if request.method == "POST":
         # check if username exrists
         existing_user = mongo.db.users.find_one(
@@ -99,9 +99,18 @@ def profile(username):
 
     if session["user"]:
         books = list(mongo.db.books.find())
+        
+        book = mongo.db.books.find_one({"created_by": username})
+        
+        if book == None:
+            books_count = 0
+        else:
+            books_count = 1
+
+        
         vote = mongo.db.books.find_one('book_upvote')
-        #return render_template("books.html", books=books, vote=vote)
-        return render_template("profile.html", username=username, books=books, vote=vote)
+        
+        return render_template("profile.html", username=username, books=books, vote=vote, books_count=books_count)
 
     return redirect(url_for("login"))
 
