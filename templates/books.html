@@ -1,53 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="brown-text under-line center-align text-shadow">All Books</h3>
+<!-- Heading  -->
+<h4 class="teal-text text-darken-1 under-line bolder center-align text-shadow">All Books</h4>
+<!-- Search section -->
 <div class="row card-panel lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
-            <div class="input-field col s12 m8">
+            <div class="input-field col s12">
                 <i class="fas fa-search prefix teal-text text-darken-4"></i>
                 <input type="text" name="query" id="query" minlength="1" class="validate" required>
                 <label for="query">Search</label>
             </div>
-            <div class="col s12 m4">
-                <button type="submit" class="teal darken-1 btn-small text-shadow"><i class="fas fa-search"></i><span class="hideing teal-text"> Search</span></button>
-                <a href="{{ url_for('get_books') }}" class="red btn-small text-shadow"><i class="fas fa-backspace"></i><span class="hideing teal-text"> Reset</span></a>
-            </div>
+        </div>
+        <div class="col s12 right-align">
+            <button type="submit" class="teal darken-1 btn-small text-shadow"><i class="fas fa-search tooltipped" data-position="top" data-tooltip="Search"></i></button>
+            <a href="{{ url_for('get_books') }}" class="red btn-small text-shadow"><i class="fas fa-backspace tooltipped" data-position="top" data-tooltip="Reset"></i></a>
         </div>
     </form>
 </div>
+<!-- chech if any books -->
 {% if books|length > 0 %}
 <ul class="collapsible popout">
     {% for book in books %}
-    
     <li>
-                
         <div class="col s1 collapsible-header white-text teal text-shadow">
             <div class=" hide-on-med-and-down">
                 <i class="fas fa-caret-down"></i>
             </div>
             <div class="col s2">
-            {% if session.user | lower == book.created_by | lower or session.user|lower == "admin"|lower %}
-            <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small waves-effect light-green accent-4">Edit</a>
-            <button onclick="window.location.href='{{ url_for('delete_book', book_id=book._id) }}'" class="red waves-effect waves btn-small tooltipped" data-position="right" data-tooltip=" 	&#128165 NOTE! The book disappears immediately and no verification takes place !!!	&#128165 ">Del</button>
-            {% endif %}
+                <!-- check if user is session user or admin -->
+                {% if session.user | lower == book.created_by | lower or session.user|lower == "admin"|lower %}
+                    <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small waves-effect light-green accent-4">Edit</a>
+                    <button onclick="window.location.href='{{ url_for('delete_book', book_id=book._id) }}'" class="red waves-effect waves btn-small tooltipped" data-position="right" data-tooltip=" 	&#128165 NOTE! The book disappears immediately and no verification takes place !!!	&#128165 ">Del</button>
+                {% endif %}
             </div>
-            <div class="col s9">
-                <strong>{{ book.book_name }}</strong> | By: {{ book.book_author }} | Release: {{book.book_release}}  | Book Point: {{ book.book_upvote }} 
+            <!-- Badges text -->
+            <div class="col s8 left-align">
+                {{ book.book_name }} | By: {{ book.book_author }} <span class="hideing">| Release: {{book.book_release}}  | Book Point: {{ book.book_upvote }} </span>
             </div>
         </div>
+        <!-- Badges expant content -->
         <div class="collapsible-body">
-            <h5 class="under-line text-shadow brown-text">{{ book.category_name }}</h5>
-            <h6 class="bolder text-shadow">{{ book.book_author }}</h6>
-            <div><img src="{{ book.book_image }}" alt="Book Image" width="200" height="300"></div>
-            <h6 class="bolder text-shadow">Description: </h6>
+            <h5 class="under-line text-shadow teal-text">Genre: {{ book.category_name }}</h5>
+            <h6 class="text-shadow bolder black-text">Author: {{ book.book_author }}</h6>
+            <!-- check if book image added from user -->
+            {% if book.book_image %}
+                <div><img src="{{ book.book_image }}" alt="Book Image" width="200" height="300"></div>
+            {% else %}
+                <div><img src="/static/images/no-book.jpg" alt="Book Image" width="200" height="300"></div>
+            {% endif %}
+            <h6 class="teal-text text-shadow">Description: </h6>
             <textarea>{{ book.book_description }}</textarea>
-            <p><em class="under-line">Added by: {{ book.created_by }}</em></p>
+            <p><em class=" black-text">Book Point: {{ book.book_upvote }} </em></p>
+            <p><em class="under-line grey-text">Added by: {{ book.created_by }} </em></p>
         </div>
     </li>
     {% endfor %}
 </ul>
 {% else %}
-<h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+    <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
 {% endif %}
 {% endblock %}
