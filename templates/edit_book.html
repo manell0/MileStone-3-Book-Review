@@ -1,94 +1,88 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-    <h3 class="brown-text under-line center-align text-shadow">Edit book</h3>
-
-    <div class="row card-panel green lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
-          <!-- Categories -->
-          <div class="row">
+<h4 class="teal-text text-darken-1 under-line bolder center-align text-shadow">Edit book</h4>
+<div class="row card-panel green lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}">
+        <!-- Categories -->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-folder-open prefix teal-text"></i>
-              <select id="category_name" name="category_name" class="validate" required>
-                <option value="" disabled>Choose Category</option>
-                {% for category in categories %}
-                  {% if category.category_name == book.category_name %}
+                <i class="fas fa-folder-open prefix teal-text"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled>Choose Category</option>
+                    {% for category in categories %}
+                    {% if category.category_name == book.category_name %}
                       <option v alue="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                  {% else %}
+                    {% else %}
                       <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                  {% endif %}
-                {% endfor %}
-              </select>
-              <label for="category_name">Book Category</label>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="category_name">Book Category</label>
             </div>
-          </div>
-          <!-- Book Name -->
-          <div class="row">
+        </div>
+        <!-- Book Name -->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-book prefix teal-text"></i>
-              <input id="book_name" name="book_name" minlength="1" maxlength="52"
-                value="{{ book.book_name }}" type="text" class="validate" required>
-              <label for="book_name">Book Name</label>
+                <i class="fas fa-book prefix teal-text"></i>
+                <input id="book_name" name="book_name" minlength="1" maxlength="52"
+                    value="{{ book.book_name }}" type="text" class="validate" required>
+                <label for="book_name">Book Name</label>
             </div>
-          </div>
-          <!-- Book Author -->
-          <div class="row">
+        </div>
+        <!-- Book Author -->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-user-edit prefix teal-text"></i>
-              <input id="book_author" name="book_author" minlength="1" maxlength="52"
-              value="{{ book.book_author }}" type="text" class="validate" required>
-              <label for="book_author">Book Author</label>
+                <i class="fas fa-user-edit prefix teal-text"></i>
+                <input id="book_author" name="book_author" minlength="1" maxlength="52"
+                    value="{{ book.book_author }}" type="text" class="validate" required>
+                <label for="book_author">Book Author</label>
             </div>
-          </div>
-          <!-- Release Year -->
-          <div class="row">
+        </div>
+        <!-- Release Year -->
+        <div class="row">
             <div class="input-field col s12">
-              <i class="fas fa-calendar-alt prefix teal-text"></i>
-              <input id="book_release" name="book_release" value="{{ book.book_release }}" type="text" class="validate" required>
-              <!--<input id="book_release" name="book_release" type="text" class="datepicker validate" required>-->
-              <label for="book_release">Release Year (2020)</label>
+                <i class="fas fa-calendar-alt prefix teal-text"></i>
+                <input id="book_release" name="book_release" value="{{ book.book_release }}" type="text" class="validate" required>
+                <!--<input id="book_release" name="book_release" type="text" class="datepicker validate" required>-->
+                <label for="book_release">Release Year (2020)</label>
             </div>
-          </div>
-           <!-- Book image -->
-           <div class="row">
+        </div>
+        <!-- Book image -->
+        <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-images prefix teal-text"></i>
-                <input id="book_image" name="book_image" value="{{ book.book_image }}" type="text" class="validate" required>
-                <label for="book_image">Book Image (Image URL)</label>
+                <input id="book_image" name="book_image" value="{{ book.book_image }}" minlength="10" type="text" class="validate">
+                <label for="book_image">Leave blank OR Book Image (Image URL)</label>
             </div>
-          </div>
-          <!-- Book Description -->
-          <div class="row">
+        </div>
+        <!-- Book Description -->
+        <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix teal-text"></i>
                 <textarea id="book_description" name="book_description" minlength="5" 
-                  maxlength="4000" class="materialize-textarea validate" required>
-                  {{- book.book_description -}}
+                    maxlength="4000" class="materialize-textarea validate" required>
+                {{- book.book_description -}}
                 </textarea>
                 <label for="book_description">Book Description</label>
             </div>
-          </div>
-          <!-- Give point section -->
-          <p class="range-field">
-            
+        </div>
+        <!-- Give point section -->
+        <p class="range-field">
             <label for="book_upvote">Points for the book (0 - 5) | You gave earlier: {{ book.book_upvote }}</label>
             <input type="range" id="book_upvote" name="book_upvote" value="{{ book.book_upvote }}" min="0" max="5" />
-            
-          </p>
-          <!-- submit button -->
-          <div class="row">
+        </p>
+        <!-- submit button -->
+        <div class="row">
             <div class="col s12 center-align">
                 <!-- cansel button all changes -->
                 <a href="{{ url_for('get_books') }}" class="btn-large red text-shadow">
-                    Cancel <i class="fas fa-times-circle right"></i>
+                Cancel <i class="fas fa-times-circle right"></i>
                 </a>
                 <button type="submit" class="btn-large teal darken-5 text-shadow">
-                    Edit Book <i class="fas fa-edit right"></i> 
+                Edit Book <i class="fas fa-edit right"></i> 
                 </button>
-                </div>
             </div>
-        </form>
-      </div>
-
+        </div>
+    </form>
+</div>
 {% endblock %}
