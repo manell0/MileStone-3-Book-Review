@@ -118,14 +118,14 @@ The manage categories page works as expected and works in all screen sizes.
 - It´s only one CSS file in the project (style.css)
   - (The test is done from Swedish browser, translated into English: Congratulations! No errors were found)
 
-![CSS Validation](assets/readme-resources/css-validaor-image.jpg)
+![CSS Validation](static/readme-resources/vcss.gif)
 
 ## Lighthouse
 
 Screenshot from the index page (desktop device)
 
-[Lighthouse test as PDF ](assets/readme-resources/lighthouse.pdf)
-![lighthouse test](assets/readme-resources/lighthouse-index.jpg)
+[Lighthouse test as PDF ](static/readme-resources/lighthouse.pdf)
+![lighthouse test](static/readme-resources/lighthouse.jpg)
 
 ## User Testing
 
