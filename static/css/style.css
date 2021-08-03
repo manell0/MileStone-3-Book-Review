@@ -1,94 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    
+     padding: 0;
+     margin: 0;
 }
-
-body{
-    background-color:rgb(253, 249, 230);
-    background-color: #fff;
-    font-family: 'Roboto', sans-serif;
+/* body styling */
+ body{
+     color: #fff;
+     background-color: #fff;
+     font-family: 'Roboto', sans-serif;
 }
-
-.alert-error {
-    padding: 8px;
-    background-color: red;
-    color: white;
-  }
-
-.flashes h4 {
-    line-height: 2;
+ .flashes h4 {
+     line-height: 2;
 }
-
-.text-shadow{
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+/* text decoration */
+ .text-shadow{
+     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
-.cornsilk{
-    background-color: cornsilk;
+ .card{
+     min-width: 140px;
 }
-
-.card{
-    min-width: 140px;
+/* badges drop_down styling */
+ .collapsible-header .col strong {
+     margin: 5px;
+     line-height: 40px;
 }
-
-
-.collapsible-header .col strong {
-    margin: 5px;
-    line-height: 40px;
+/* logo styling */
+ .brand-logo{
+     margin-left: 5px;
 }
-
-.brand-logo{
-    margin-left: 5px;
+ .right{
+     text-align: right;
 }
-
-.right{
-    text-align: right;
+/* button large */
+ .btn-large{
+     width: 250px;
+     margin-left: 5px;
+     margin-right: 5px;
+     margin-top: 3px;
 }
-
-.btn-large{
-    
-    width: 250px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 3px;
+/* button small */
+ .btn-small{
+     width: 60px;
+     margin-left: 5px;
+     margin-right: 5px;
+     margin-top: 2px;
 }
-
-.btn-small{
-    width: 80px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 2px;
-    
+/* text styling */
+ .bolder{
+     font-weight: 700;
 }
-.bolder{
-    font-weight: 700;
-    
-    
+ .under-line{
+     text-decoration: underline;
 }
-
-.under-line{
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 641px) {
-    .hideing{
-        /*visibility: hidden;*/
-        display: none;
+/* media section */
+ @media screen and (max-width: 641px) {
+     .small{
+         font-size: 12px;
     }
-    .small{
-        font-size: 12px;
-        
+     .smaller{
+         font-size: 24px;
     }
-    .smaller{
-        font-size: 24px;
+     .btn-small{
+         padding: 1px;
+         margin: 2px;
     }
-    .btn-small{
-        padding: 1px;
-        margin: 2px;
+}
+ @media screen and (max-width: 361px){
+     .hideing{
+         display: none;
     }
+}
 
-    
-  }
