@@ -5,11 +5,11 @@
 
 ## Milestone project 3 (Code Institute)
 
-This is a simple website where you can upload details of books, and allow users to write comments about any book and upvote it..
+This is a simple website where you can upload books, and allow users to write description on books and up vote it..
 
 **[View the repository on GitHub](https://github.com/manell0/MileStone-3-Book-Review)**
 
-**[View The Cryptopedia on Heroku](http://milestone-3-book-review.herokuapp.com/get_books)**
+**[View The Book Review site on Heroku](http://milestone-3-book-review.herokuapp.com/get_books)**
 
 - For testing, please use the following login information:
    - Username: admin / Password: admin
@@ -70,7 +70,7 @@ This is a simple website where you can upload details of books, and allow users 
 - People who like to read books.
 - People who want to find new books to read.
 - Users who like book reviews.
-- People who simply want to spend some time in a developing and fun way.
+- People who simply want to spend some time in a developing way.
 
 ## User Stories
 
@@ -80,7 +80,7 @@ This is a simple website where you can upload details of books, and allow users 
 
 2. As a new user, I want to be able to find out how this book review site works and what it is about.
 
-3. As a new user, I want to be able to rate the books.
+3. As a new user, I want to be able to rate my books.
 
 4. As a new user, I want to be able to write a review.
 
@@ -88,7 +88,7 @@ This is a simple website where you can upload details of books, and allow users 
 
 6. As a new user, I want to be able to add books.
 
-7. As a new user, I want to be able to log out from the site.
+7. As a new user, I want to be able to login/log out and register on the site.
 
 ### Current Fans Goals:
 
@@ -120,7 +120,7 @@ With these goals in mind, a strategy table was created to determine the trade-of
 - ##### Content Requirements
 
   - The user will be looking for:
-    - Information about the books and the possibility to rate them.
+    - Information about the books and the see the rate of them.
     - A quick way to find high rated books.
 
 - ##### Functionality Requirements
@@ -153,7 +153,7 @@ Wireframe mockup was created in a Figma Workspace with providing a positive user
 
 ### Color Scheme
 
-The main colors used throughout the website are teal, creamy white and little brown for headers.
+The main colors used throughout the website are teal and white.
 
 
 
@@ -184,10 +184,10 @@ Each page on the website has a consistent, responsive navigation system through 
 
 ### Existing Features
 
-#### The website consists of four main pages (Home, users books, Add book, Log Out/ Log In and register) and Manage Categories only for Admin (Login: Username = admin, and password = admin).
+#### The website consists of four main pages (Home, users books, Add book, Log Out/ Log In and register) And a fifth page for Manage Categories only for Admin (Login: Username = admin, and Password = admin).
 
 - ### Start Page (Home):
-  - Navbar on top of the Home page is the same across the whole site.
+  - Navbar (fixed) on top of the Home page is the same across the whole site.
    - Home goes to the start page.
    - Users Books goes to the owner's books page for editing and deletion.
    - Add Book goes to add_book form.
@@ -216,13 +216,17 @@ Each page on the website has a consistent, responsive navigation system through 
 
 - When deleting a book or category, make sure that it is verified. Instead of the book being removed immediately without verification.
 
+- Better control of input on the pages add book/edit book and on manage category.
+
+- Verification for book removal
+
 
 [Back to the top](#table-of-contents)
 
 # Issues and Bugs
 
 - Problems getting verification for book removal to work. Ended up lacking time, so I had to put that feature on future implement.
-
+   - Have been bothering with this problem for far too long. I ordered time for the tutor sessions but was never contacted by anyone at Slack where I thought the e-meeting would take place.
 
 - Problems with my javascript code appearing with 8 spaces when looking in GitHub. Apparently can not be changed.
 
@@ -355,7 +359,7 @@ To reproduce this project within a local deployement, use the following steps an
       os.environ.setdefault("SECRET_KEY", "your_secret_key")
       ```
 3. Install additional packages:
-   - pip3 install flask-paginate
+   - pip3 install flask_pymongo
 
 4. Update the requirements.txt file using the following command:
    - pip3 freeze > requirements.txt
@@ -369,7 +373,7 @@ The Project's source file was also pushed to Heroku via the heroku master branch
 
 2. A Procfile was created using the terminal command echo web: python app.py > Procfile.
 
-3. A new app was created for the Cryptopedia on Heroku dashboard, by clicking the "New" button and setting the region to Europe. It is necessary to open an account with Heroku and start a new app installation inside your heroku dashboard.
+3. A new app was created for the Book Review on Heroku dashboard, by clicking the "New" button and setting the region to Europe. It is necessary to open an account with Heroku and start a new app installation inside your heroku dashboard.
 
 4. New app configurations including environament variables were added on "Settings" > "Reveal Config Vars" inside the Heroku dashboard:
    ```
