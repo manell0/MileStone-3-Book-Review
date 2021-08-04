@@ -220,6 +220,8 @@ Each page on the website has a consistent, responsive navigation system through 
 
 - Verification for book removal
 
+- Pagination on pages that are likely to be long.
+
 
 [Back to the top](#table-of-contents)
 
