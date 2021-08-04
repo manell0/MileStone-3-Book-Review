@@ -8,6 +8,7 @@
 This is a simple website where you can upload details of books, and allow users to write comments about any book and upvote it..
 
 **[View the repository on GitHub](https://github.com/manell0/MileStone-3-Book-Review)**
+
 **[View The Cryptopedia on Heroku](http://milestone-3-book-review.herokuapp.com/get_books)**
 
 - For testing, please use the following login information:
