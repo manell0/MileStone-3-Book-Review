@@ -232,11 +232,12 @@ Each page on the website has a consistent, responsive navigation system through 
 
   - Solution: You can append ?ts=2 or ?ts=4 to the URL to change the tab-size.
 
-##### Other information
+##### Other information:
 ```
-This project has been really troublesome when my computer crashed and panicked and had to fix it in the best way. 
-It took a lot of my time and energy. 
+This project has been really awkward since my computer crashed and panicked and had to fix it with an emergency solution.
+It took a lot of my time and energy.
 I tore off my hamstrings and have been to the hospital a number of times, which has also taken my time and energy.
+
 ```
 # Technologies Used
 
